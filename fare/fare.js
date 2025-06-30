@@ -1,21 +1,20 @@
-function calculateBodaFare (distanceInkm) {
-const baseFare = 50;
-const chargePerkm =20;
-const totalFare =baseFare + (distanceInkm * chargePerkm)
+function calculateBodaFare() {
+  console.log("Boda Fare button clicked!"); // Debug line to confirm button works
 
-console.log(`foratrip of $ {distanceInkm} km, your estimatedbodafare is: ${totalFare}`);
+  const baseFare = 50;
+  const chargePerKm = 15;
+
+  const userInput = prompt("Enter the distance of your trip in kilometers:");
+  const distance = Number(userInput);
+
+  if (isNaN(distance) || distance <= 0) {
+    console.log("Oops! Enter a valid distance in kilometers.");
+    return;
+  }
+
+  const totalFare = baseFare + (distance * chargePerKm);
+  console.log(`For a trip of ${distance} km, your estimated boda fare is: KES ${totalFare}`);
 }
 
-//prompt the user for distance and convert to number
- const userinput = prompt(`enter the distance of your trip in kilometers`);
- const distance = Number(userinput); // Corrected line: convert the string to a number
 
- // validation
- if(isNaN(distance) || distance < 0){ // changed && to || as both make the input invalid
-    console.log("enter a valid distance in kilometers");
- }
- 
- // Assuming calculateBodaFare excepts a distance arguement, // you should pass the `distance` variable to it.
-
- calculateBodaFare();
 
